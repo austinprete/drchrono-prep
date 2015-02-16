@@ -97,4 +97,4 @@ def share_form(request, user_id, form_id):
     connection = mail.get_connection()
     send_mail('Form Designer: Shared form from ' + request.user.username, request.POST['message'] + '\n\n' + link, request.user.email, [request.POST['to_email']], connection=connection)
     connection.close()
-    return HttpResponseRedirect(reverse('forms:form', args=(user.id, form_id)))
+    return HttpResponseRedirect(reverse('forms:form', args=(request.user.id, form_id)))
