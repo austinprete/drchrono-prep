@@ -93,10 +93,8 @@ def view_form(request, form_id):
 
 @login_required
 def share_form(request, user_id, form_id):
-    user = get_object_or_404(User, pk=user_id)
     link = "http://localhost:8000/forms/form/" + form_id
     connection = mail.get_connection()
-    send_mail('Form Designer: Shared form from ' + user.username, request.POST['message'] + '\n\n' + link,
-              request.POST['from_email'], [request.POST['to_email']], connection=connection)
+    send_mail('Form Designer: Shared form from ' + request.user.username, request.POST['message'] + '\n\n' + link, request.user.email, [request.POST['to_email']], connection=connection)
     connection.close()
     return HttpResponseRedirect(reverse('forms:form', args=(user.id, form_id)))

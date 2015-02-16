@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1620">
-              <caret line="75" column="67" selection-start-line="75" selection-start-column="67" selection-end-line="75" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.6103896" vertical-offset="1128" max-vertical-offset="1590">
+              <caret line="94" column="42" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -113,10 +113,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drchrono_prep/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44805196" vertical-offset="1368" max-vertical-offset="1860">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1368" max-vertical-offset="1860">
               <caret line="105" column="20" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
               <folding>
                 <element signature="e#324#356#0" expanded="true" />
@@ -168,11 +168,11 @@
         <option value="$PROJECT_DIR$/forms/templates/forms/newuser.html" />
         <option value="$PROJECT_DIR$/forms/templates/forms/user.html" />
         <option value="$PROJECT_DIR$/forms/urls.py" />
-        <option value="$PROJECT_DIR$/forms/views.py" />
         <option value="$PROJECT_DIR$/forms/templates/forms/main_template.html" />
         <option value="$PROJECT_DIR$/forms/templates/forms/form.html" />
         <option value="$PROJECT_DIR$/drchrono_prep/wsgi.py" />
         <option value="$PROJECT_DIR$/drchrono_prep/settings.py" />
+        <option value="$PROJECT_DIR$/forms/views.py" />
       </list>
     </option>
   </component>
@@ -930,16 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1620">
-          <caret line="75" column="67" selection-start-line="75" selection-start-column="67" selection-end-line="75" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forms/templates/forms/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="315">
@@ -958,10 +948,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/drchrono_prep/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44805196" vertical-offset="1368" max-vertical-offset="1860">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1368" max-vertical-offset="1860">
           <caret line="105" column="20" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
           <folding>
             <element signature="e#324#356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6103896" vertical-offset="1128" max-vertical-offset="1590">
+          <caret line="94" column="42" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
