@@ -13,7 +13,7 @@ from forms.models import Form
 def index(request):
     if request.user.is_authenticated():
         forms = request.user.form_set.all()
-        return render(request, 'forms/user.html', {'user': request.user, 'forms': forms})
+        return render(request, 'forms/user.html', {'request': request, 'user': request.user, 'forms': forms})
     return render(request, 'forms/index.html', {'request': request})
 
 
