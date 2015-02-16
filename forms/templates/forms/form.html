@@ -1,0 +1,68 @@
+{% extends 'forms/main_template.html' %}
+
+{% block home_link %}
+<a href="{% url 'forms:user' user.id %}">Forms</a>
+{% endblock %}
+
+{% block content %}
+    <br/>
+    <div class="card">
+        <div class="container-fluid">
+            <h2>
+                <small style="font-size: 34px; text-decoration: underline">{{ form.name }}</small>
+            </h2>
+
+            <h3>
+                <small style="font-size:26px">{{ form.description }}</small>
+            </h3>
+            <hr/>
+            {% if elements %}
+                {% for element in elements %}
+                    {% if element.type == "Integer" %}
+                        <p>{{ element.name }}</p>
+                        <input type="text" maxlength="10" size="11" placeholder="Integer" class="form-control"/>
+                    {% elif element.type == "Boolean" %}
+                        <span>{{ element.name }}</span><input type="checkbox" class="form-control"/>
+                    {% endif %}
+                    <hr/>
+                {% endfor %}
+            {% else %}
+                <p>There are no elements to show yet.</p>
+            {% endif %}
+        </div>
+    </div>
+    <h4>Add a new element:</h4>
+    <hr/>
+    <div class="container-fluid card">
+        <form action="{% url 'forms:add_element' user.id form.id %}" method="post" class="form-group">
+            {% csrf_token %}
+            <br/>
+            <input type="text" name="name" placeholder="Element name" class="form-control"/>
+            <br/>
+            <select name="type" class="selectpicker" data-style="form-control" data-menu-style="">
+                <option value="" disabled selected>Type</option>
+                <option value="Integer">Integer</option>
+                <option value="Boolean">Boolean</option>
+            </select>
+            <br/>
+            <br/>
+            <input type="submit" value="Add form element" class="form-control"/>
+        </form>
+    </div>
+    <h4>Share form:</h4>
+    <hr>
+    <div class="container-fluid card">
+        <form action="{% url 'forms:share_form' user.id form.id %}" method="post" class="form-group">
+            {% csrf_token %}
+            <br/>
+            <input type="text" name="to_email" placeholder="Recipient's email address" class="form-control"/>
+            <br/>
+            <textarea class="form-control" name="message" placeholder="Message (optional)"></textarea>
+            <br/>
+            <input type="submit" value="Share form" class="form-control"/>
+        </form>
+    </div>
+    <a href="{% url 'forms:user' user.id %}">Return to proile page.</a>
+    <br/>
+    <br/>
+{% endblock %}

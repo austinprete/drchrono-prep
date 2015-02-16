@@ -1,0 +1,16 @@
+{% extends 'forms/main_template.html' %}
+
+{% block content %}
+    <h1>Login</h1>
+    <form action="{% url 'forms:login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Username" name="username" class="form-control"/>
+        <br/>
+        <input type="password" placeholder="Password" name="password" class="form-control"/>
+        <br/>
+        <input type="submit" value="Login" class="btn btn-primary" class="form-control"/>
+    </form>
+    <a href="{% url 'forms:new_user' %}">Create an account</a>
+    <br/>
+    <br/>
+{% endblock %}

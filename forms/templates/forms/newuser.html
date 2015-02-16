@@ -1,0 +1,15 @@
+{% extends 'forms/main_template.html' %}
+
+{% block content %}
+    <h1>New User</h1>
+    <form action="{% url 'forms:create_user' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Username" class="form-control" name="username"/>
+        <br/>
+        <input type="email" placeholder="Email" class="form-control" name="email"/>
+        <br/>
+        <input type="password" placeholder="Password" class="form-control" name="password"/>
+        <br/>
+        <input type="submit" value="Create Account" class="form-control btn btn-primary"/>
+    </form>
+{% endblock %}

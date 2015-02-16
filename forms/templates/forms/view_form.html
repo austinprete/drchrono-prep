@@ -1,0 +1,30 @@
+{% extends 'forms/main_template.html' %}
+
+{% block content %}
+    <br/>
+    <div class="card">
+        <div class="container-fluid">
+            <h2>
+                <small style="font-size: 34px; text-decoration: underline">{{ form.name }}</small>
+            </h2>
+
+            <h3>
+                <small style="font-size:26px">{{ form.description }}</small>
+            </h3>
+            <hr/>
+            {% if elements %}
+                {% for element in elements %}
+                    {% if element.type == "Integer" %}
+                        <p>{{ element.name }}</p>
+                        <input type="text" maxlength="10" size="11" placeholder="Integer" class="form-control"/>
+                    {% elif element.type == "Boolean" %}
+                        <span>{{ element.name }}</span><input type="checkbox" class="form-control"/>
+                    {% endif %}
+                    <hr/>
+                {% endfor %}
+            {% else %}
+                <p>There are no elements to show yet.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
