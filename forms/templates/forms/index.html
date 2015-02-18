@@ -1,16 +1,24 @@
-{% extends 'forms/main_template.html' %}
+{% extends 'main/main_template.html' %}
 
 {% block content %}
-    <h1>Login</h1>
-    <form action="{% url 'forms:login' %}" method="post">
-        {% csrf_token %}
-        <input type="text" placeholder="Username" name="username" class="form-control"/>
-        <br/>
-        <input type="password" placeholder="Password" name="password" class="form-control"/>
-        <br/>
-        <input type="submit" value="Login" class="btn btn-primary" class="form-control"/>
-    </form>
-    <a href="{% url 'forms:new_user' %}">Create an account</a>
+    <h1>Form Designer</h1>
+    <h3>This is the form designer area! Here you can create and share custom input forms for whatever task you need to
+        accomplish.</h3>
+    <br/>
+    <h2>Current Forms:</h2>
+    {% if forms %}
+        <ul>
+            {% for form in forms %}
+                <li><a href="{% url 'forms:form' form.id %}" style="font-size:18px">{{ form.name }}</a></li>
+                <br/>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'forms:new_form' %}">Create a new form</a>
+    {% else %}
+        <p>There are no forms to show yet! <a href="{% url 'forms:new_form' %}">Create your first form here!</a>
+        </p>
+    {% endif %}
+    <br/>
     <br/>
     <br/>
 {% endblock %}

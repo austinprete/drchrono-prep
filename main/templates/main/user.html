@@ -1,0 +1,8 @@
+{% extends 'main/main_template.html' %}
+
+{% block content %}
+    <h1>Hello, {{ user.username }}!</h1>
+    <h3>While you're here, take a look around! Go <a href="{% url 'forms:index' %}">design some forms</a> or check out
+        our <a href="{% url 'schedule:index' %}">immunization
+            schedule area!</a></h3>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'main/main_template.html' %}
+
+{% block content %}
+    <h1>Add a new family</h1>
+    <form action="{% url 'schedule:add_family' %}" method="post" class="form-group">
+        {% csrf_token %}
+        <input name="last_name" type="text" placeholder="Last name (Can be changed for individual family members)"
+               class="form-control"/>
+        <br/>
+        <input type="submit" value="Add family" class="form-control"/>
+    </form>
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from schedule.models import Doctor, PatientFamily, Patient
+from schedule.models import PatientFamily, Patient, Schedule, Vaccine, Dose
 
 
 class PatientFamilyInlines(admin.TabularInline):
@@ -13,14 +13,11 @@ class PatientInlines(admin.TabularInline):
     extra = 2
 
 
-class DoctorAdmin(admin.ModelAdmin):
-    inlines = [PatientFamilyInlines]
-
-
 class PatientFamilyAdmin(admin.ModelAdmin):
     inlines = [PatientInlines]
 
-
-admin.site.register(Doctor, DoctorAdmin)
 admin.site.register(PatientFamily, PatientFamilyAdmin)
 admin.site.register(Patient)
+admin.site.register(Schedule)
+admin.site.register(Vaccine)
+admin.site.register(Dose)

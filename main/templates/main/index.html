@@ -1,0 +1,27 @@
+{% extends 'main/main_template.html' %}
+
+{% block content %}
+    <h1>Login</h1>
+    <form action="{% url 'main:login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Username" name="username" class="form-control"/>
+        <br/>
+        <input type="password" placeholder="Password" name="password" class="form-control"/>
+        <br/>
+        <input type="submit" value="Login" class="btn btn-primary" class="form-control"/>
+    </form>
+    <h1>Create a new account</h1>
+    <form action="{% url 'forms:create_user' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Username" class="form-control" name="username"/>
+        <br/>
+        <input type="email" placeholder="Email" class="form-control" name="email"/>
+        <br/>
+        <input type="password" placeholder="Password" class="form-control" name="password"/>
+        <br/>
+        <input type="submit" value="Create Account" class="form-control btn btn-primary"/>
+    </form>
+
+    <br/>
+    <br/>
+{% endblock %}

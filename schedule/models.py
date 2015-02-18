@@ -1,15 +1,9 @@
 from django.db import models
-
-class Doctor(models.Model):
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=30)
-
-    def __str__(self):
-        return ("%s, %s" % (self.last_name, self.first_name))
+from django.contrib.auth.models import User
 
 
 class PatientFamily(models.Model):
-    doctor = models.ForeignKey(Doctor)
+    user = models.ForeignKey(User)
     last_name = models.CharField(max_length=30)
 
     def __str__(self):
@@ -23,3 +17,30 @@ class Patient(models.Model):
 
     def __str__(self):
         return ("%s, %s" % (self.last_name, self.first_name))
+
+
+class Schedule(models.Model):
+    patient = models.ForeignKey(Patient)
+
+    def __str__(self):
+        return self.patient.first_name + "'s Schedule"
+
+
+class Vaccine(models.Model):
+    schedule = models.ForeignKey(Schedule)
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+class Dose(models.Model):
+    vaccine = models.ForeignKey(Vaccine)
+    name = models.CharField(max_length=60)
+    given = models.BooleanField(default=False)
+    date = models.DateField(blank=True, null=True)
+
+
+    def __str__(self):
+        return self.vaccine.schedule.patient.first_name + " " + self.vaccine.schedule.patient.last_name + " - " + self.name

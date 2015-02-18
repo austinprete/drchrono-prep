@@ -10,11 +10,11 @@ from django.shortcuts import render, get_object_or_404
 from forms.models import Form
 
 
+@login_required
 def index(request):
-    if request.user.is_authenticated():
-        forms = request.user.form_set.all()
-        return render(request, 'forms/user.html', {'request': request, 'user': request.user, 'forms': forms})
-    return render(request, 'forms/index.html', {'request': request})
+    user = request.user
+    forms = user.form_set.all()
+    return render(request, 'forms/index.html', {'request': request, 'forms': forms,})
 
 
 def new_user(request):
@@ -48,53 +48,47 @@ def logout_view(request):
 
 
 @login_required
-def user(request, user_id):
-    user = get_object_or_404(User, pk=user_id)
-    forms = user.form_set.all()
-    return render(request, 'forms/user.html', {'request': request, 'forms': forms, 'user': user, })
-
-
-@login_required
-def new_form(request, user_id):
-    user = get_object_or_404(User, pk=user_id)
+def new_form(request):
+    user = request.user
     return render(request, 'forms/newform.html', {'request': request, 'user': user, })
 
 
 @login_required
-def create_form(request, user_id):
-    user = get_object_or_404(User, pk=user_id)
+def create_form(request):
+    user = request.user
     form = user.form_set.create(name=request.POST['name'], description=request.POST['description'])
     form.save()
-    return HttpResponseRedirect(reverse('forms:form', args=(user.id, form.id)))
+    return HttpResponseRedirect(reverse('forms:form', args=(form.id,)))
 
 
 @login_required
-def form(request, user_id, form_id):
-    user = get_object_or_404(User, pk=user_id)
-    form = get_object_or_404(Form, pk=form_id)
+def form(request, form_id):
+    user = request.user
+    form = Form.objects.filter(user=user, pk=form_id)[0]
     elements = form.element_set.all()
     return render(request, 'forms/form.html', {'request': request, 'user': user, 'form': form, 'elements': elements})
 
 
 @login_required
-def add_element(request, user_id, form_id):
-    user = get_object_or_404(User, pk=user_id)
-    form = get_object_or_404(Form, pk=form_id)
+def add_element(request, form_id):
+    user = request.user
+    form = Form.objects.filter(user=user, pk=form_id)[0]
     element = form.element_set.create(name=request.POST['name'], type=request.POST['type'])
     element.save()
-    return HttpResponseRedirect(reverse('forms:form', args=(user.id, form.id)))
+    return HttpResponseRedirect(reverse('forms:form', args=(form.id,)))
 
 
 def view_form(request, form_id):
     form = get_object_or_404(Form, pk=form_id)
     elements = form.element_set.all()
-    return render(request, 'forms/view_form.html', {'form': form, 'elements': elements, })
+    return render(request, 'forms/view_form.html', {'request': request, 'form': form, 'elements': elements, })
 
 
 @login_required
-def share_form(request, user_id, form_id):
-    link = "http://" + request.get_host() + "/forms/form/" + form_id
+def share_form(request, form_id):
+    user = request.user
+    link = "http://" + request.get_host() + reverse('forms:view_form', args=(form_id,))
     connection = mail.get_connection()
-    send_mail('Form Designer: Shared form from ' + request.user.username, request.POST['message'] + '\n\n' + link, request.user.email, [request.POST['to_email']], connection=connection)
+    send_mail('Form Designer: Shared form from ' + user.username, request.POST['message'] + '\n\n' + link, user.email, [request.POST['to_email']], connection=connection)
     connection.close()
-    return HttpResponseRedirect(reverse('forms:form', args=(request.user.id, form_id)))
+    return HttpResponseRedirect(reverse('forms:form', args=(form_id,)))

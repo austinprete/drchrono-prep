@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'schedule',
     'forms',
+    'main',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,15 +96,21 @@ EMAIL_HOST_PASSWORD = 'g0l4ng3r'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-
+#
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config(default='postgres://localhost/template1')
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-LOGIN_URL = '/forms/'
+LOGIN_URL = '/'
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
