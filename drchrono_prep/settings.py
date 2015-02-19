@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'schedule',
     'forms',
     'main',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
