@@ -38,16 +38,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schedule/templates/schedule/update.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="165">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,8 +53,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="2205">
-              <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="2205">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -85,8 +75,8 @@
       <file leaf-file-name="chart.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule/templates/schedule/chart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="74.375" vertical-offset="1845" max-vertical-offset="7995">
-              <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+            <state vertical-scroll-proportion="-23.125" vertical-offset="645" max-vertical-offset="7995">
+              <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -97,7 +87,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="450">
               <caret line="12" column="104" selection-start-line="12" selection-start-column="104" selection-end-line="12" selection-end-column="104" />
-              <folding />
+              <folding>
+                <marker date="1424302996000" expanded="true" signature="145:578" placeholder="{% if members ... %}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,8 +107,18 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/drchrono_prep/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49704143" vertical-offset="1203" max-vertical-offset="1905">
-              <caret line="100" column="49" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.5979021" vertical-offset="1203" max-vertical-offset="1905">
+              <caret line="106" column="7" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="0001_initial.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schedule/migrations/0001_initial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
+              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -748,7 +750,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26712328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26712328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45479453" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -759,7 +761,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25444266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1780822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1780822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -812,16 +814,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/forms/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="641" max-vertical-offset="1500">
-          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schedule/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="195">
@@ -1019,6 +1011,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
           <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,7 +1103,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="780">
           <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1187,7 +1180,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="450">
           <caret line="12" column="104" selection-start-line="12" selection-start-column="104" selection-end-line="12" selection-end-column="104" />
-          <folding />
+          <folding>
+            <marker date="1424302996000" expanded="true" signature="145:578" placeholder="{% if members ... %}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1201,26 +1196,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule/templates/schedule/chart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="74.375" vertical-offset="1845" max-vertical-offset="7995">
-          <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+        <state vertical-scroll-proportion="-23.125" vertical-offset="645" max-vertical-offset="7995">
+          <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="2205">
-          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="2205">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/schedule/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/drchrono_prep/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49704143" vertical-offset="1203" max-vertical-offset="1905">
-          <caret line="100" column="49" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.5979021" vertical-offset="1203" max-vertical-offset="1905">
+          <caret line="106" column="7" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
           <folding />
         </state>
       </provider>
