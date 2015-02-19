@@ -17,7 +17,7 @@ class Element(models.Model):
         ('IN', 'Integer'),
     )
     type = models.CharField(max_length=20, choices=ELEMENT_CHOICES)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=150)
 
 
     def __str__(self):
