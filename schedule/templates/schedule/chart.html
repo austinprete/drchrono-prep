@@ -2,6 +2,8 @@
 
 {% block content %}
     <h2 class="page-header">Chart for {{ member.first_name }} {{ member.last_name }}:</h2>
+    <h4><a href="{% url 'schedule:family' family.id %}">Click here to return to the overview for
+        the {{ family.last_name }} family</a></h4>
     <div class="table-responsive">
         <form action="{% url 'schedule:update' family.id member.id %}" method="post" class="form-group">
             {% csrf_token %}
@@ -518,7 +520,7 @@
                 </tr>
                 </tbody>
             </table>
-        <input type="submit" class="form-control" value="Update"/>
+            <input type="submit" class="form-control" value="Update"/>
         </form>
     </div>
 {% endblock %}

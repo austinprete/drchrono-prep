@@ -2,19 +2,24 @@
 
 {% block content %}
     <h1>{{ family.last_name }} family</h1>
+    <h3>Current family members:</h3>
+    {% if members %}
+        {% for member in members %}
+            <p>{{ member.first_name }} {{ member.last_name }} - <a
+                    href="{% url 'schedule:chart' family.id member.id %}"> View {{ member.first_name }}'s immunization
+                chart</a></p>
+        {% endfor %}
+        {% else %}
+        <p>No family members to display yet, get started by adding a family member using the form below!</p>
+    {% endif %}
     <h3>Add a family member:</h3>
+
     <form class="form-group" action="{% url 'schedule:add_member' family.id %}" method="post">
         {% csrf_token %}
         <input type="text" placeholder="First name of family member" class="form-control" name="first_name"/>
         <br/>
-        <input type="text" placeholder="Last name of family member" class="form-control" name="last_name" />
+        <input type="text" placeholder="Last name of family member" class="form-control" name="last_name"/>
         <br/>
         <input type="submit" value="Add family member" class="form-control"/>
     </form>
-    {% if members %}
-        <h3>Current family members:</h3>
-        {% for member in members %}
-            <p>{{ member.first_name }} {{ member.last_name }} - <a href="{% url 'schedule:chart' family.id member.id %}"> View {{ member.first_name }}'s immunization chart</a></p>
-        {% endfor %}
-    {% endif %}
 {% endblock %}

@@ -7,14 +7,16 @@
     <h3 class="page-header">Added Families</h3>
     {% if families %}
         {% for family in families %}
-            <h5><a href="{% url 'schedule:family' family.id %}">{{ family.last_name }}</a></h5>
+            <h5><a href="{% url 'schedule:family' family.id %}">- {{ family.last_name }}</a></h5>
         {% endfor %}
+        <h5><a href="{% url 'schedule:new_family' %}">Add a new family</a></h5>
     {% else %}
         <h4>Get started <a href="{% url 'schedule:new_family' %}">here</a> by adding a new family along with each family
             member that you
             want to track immunizations for.
         </h4>
     {% endif %}
+
     <br/>
     <br/>
 {% endblock %}
