@@ -98,7 +98,7 @@ EMAIL_USE_TLS = True
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config(default='postgres://localhost/template1')
+DATABASES['default'] =  dj_database_url.config()
 #
 # DATABASES = {
 #     'default': {
