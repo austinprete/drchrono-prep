@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'schedule',
     'forms',
     'main',
-    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,10 +96,11 @@ EMAIL_HOST_PASSWORD = 'g0l4ng3r'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+#
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
-#
+DATABASES['default'] =  dj_database_url.config(default='postgres://localhost/template1')
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
