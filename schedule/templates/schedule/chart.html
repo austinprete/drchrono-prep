@@ -1,5 +1,7 @@
-{% extends 'main/main_template.html' %}
+{% extends 'main/base.html' %}
 
+{% block title %}Chart{% endblock %}
+{% block schedule_class %}active{% endblock %}
 {% block content %}
     <h2 class="page-header">Chart for {{ member.first_name }} {{ member.last_name }}:</h2>
     <h4><a href="{% url 'schedule:family' family.id %}">Click here to return to the overview for

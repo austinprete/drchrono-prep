@@ -1,13 +1,16 @@
-{% extends 'main/main_template.html' %}
+{% extends 'main/base.html' %}
+
+{% block title %}New Form{% endblock %}
+{% block forms_class %}active{% endblock %}
 
 {% block content %}
-<h1>Form Details</h1>
-<form action="{% url 'forms:create_form' %}" method="post" class="form-group">
-    {% csrf_token %}
-    <input type="text" placeholder="Form name" name="name" class="form-control"/>
-    <br/>
-    <textarea placeholder="Description" name="description" class="form-control"></textarea>
-    <br/>
-    <input type="submit" value="Create form" class="form-control"/>
-</form>
+    <h1>Form Details</h1>
+    <form action="{% url 'forms:create_form' %}" method="post" class="form-group">
+        {% csrf_token %}
+        <input type="text" placeholder="Form name" name="name" class="form-control"/>
+        <br/>
+        <textarea placeholder="Description" name="description" class="form-control"></textarea>
+        <br/>
+        <input type="submit" value="Create form" class="form-control"/>
+    </form>
 {% endblock %}

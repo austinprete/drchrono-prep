@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{% static 'forms/assets/css/examples.css' %}">
     <link rel="stylesheet" href="{% static 'forms/assets/css/demo.css' %}">
     <link rel="stylesheet" href="{% static 'schedule/main.css' %}">
+
+    <title>drchrono prep - {% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -33,10 +35,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active">{% block home_link %}<a href="{% url 'main:user' %}">Home</a>{% endblock %}
+                    <li class="{% block home_class %}{% endblock %}">{% block home_link %}<a href="{% url 'main:user' %}">Home</a>{% endblock %}
                     </li>
-                    <li><a href="{% url 'schedule:index' %}">Schedules</a></li>
-                    <li><a href="{% url 'forms:index' %}">Forms</a></li>
+                    <li class="{% block schedule_class %}{% endblock %}"><a href="{% url 'schedule:index' %}">Schedules</a></li>
+                    <li class="{% block forms_class %}{% endblock %}"><a href="{% url 'forms:index' %}">Forms</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

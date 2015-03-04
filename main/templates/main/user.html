@@ -1,4 +1,7 @@
-{% extends 'main/main_template.html' %}
+{% extends 'main/base.html' %}
+
+{% block title %}{{ user.username }}{% endblock %}
+{% block home_class %}active{% endblock %}
 
 {% block content %}
     <h1>Hello, {{ user.username }}!</h1>

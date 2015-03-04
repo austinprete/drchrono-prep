@@ -1,5 +1,7 @@
-{% extends 'main/main_template.html' %}
+{% extends 'main/base.html' %}
 
+{% block title %}New Family{% endblock %}
+{% block schedule_class %}active{% endblock %}
 {% block content %}
     <h1>Add a new family</h1>
     <form action="{% url 'schedule:add_family' %}" method="post" class="form-group">

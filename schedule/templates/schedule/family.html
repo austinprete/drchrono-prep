@@ -1,5 +1,7 @@
-{% extends 'main/main_template.html' %}
+{% extends 'main/base.html' %}
 
+{% block title %}Family{% endblock %}
+{% block schedule_class %}active{% endblock %}
 {% block content %}
     <h1>{{ family.last_name }} family</h1>
     <h3>Current family members:</h3>
