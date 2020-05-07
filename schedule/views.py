@@ -1,17 +1,17 @@
-from string import split
+# from string import split
 from datetime import datetime
+
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
-from schedule.models import Vaccine, Schedule, PatientFamily, Patient
+from django.shortcuts import render
 
 
 @login_required
 def index(request):
     user = request.user
     families = user.patientfamily_set.all()
-    return render(request, 'schedule/index.html', {'request': request, 'families': families,})
+    return render(request, 'schedule/index.html', {'request': request, 'families': families, })
 
 
 @login_required
@@ -27,7 +27,8 @@ def chart(request, family_id, member_id):
         doses = []
         for vaccine in vaccines:
             doses.append(vaccine.dose_set.all())
-    return render(request, 'schedule/chart.html', {'request': request, 'family': family, 'member': member, 'doses': doses})
+    return render(request, 'schedule/chart.html',
+                  {'request': request, 'family': family, 'member': member, 'doses': doses})
 
 
 @login_required
@@ -51,7 +52,7 @@ def update_schedule(request, family_id, member_id):
                         formatted_date = datetime.strptime(date, '%m/%d/%Y').strftime('%Y-%m-%d')
                         dose.date = formatted_date
                         dose.save()
-                        return HttpResponseRedirect(reverse('schedule:chart', args=(family.id,member.id,)))
+                        return HttpResponseRedirect(reverse('schedule:chart', args=(family.id, member.id,)))
 
     return render(request, 'schedule/update.html', {'values': values})
 
@@ -79,24 +80,23 @@ def family_view(request, family_id):
 
 # Helper function used by new_schedule()
 def create_doses(vaccine, number):
-    for i in range(1, number+1):
-        dose = vaccine.dose_set.create(name=vaccine.name+"_"+str(i))
+    for i in range(1, number + 1):
+        dose = vaccine.dose_set.create(name=vaccine.name + "_" + str(i))
         dose.save()
 
 
 def new_schedule(member):
-
     # Create schedule
     schedule = member.schedule_set.create()
     schedule.save()
 
     # Hepatitis B Vaccine
-    hepatitis_b = schedule.vaccine_set.create(name="hepatitis_b",description="Hepatitis B")
+    hepatitis_b = schedule.vaccine_set.create(name="hepatitis_b", description="Hepatitis B")
     hepatitis_b.save()
     create_doses(hepatitis_b, 5)
 
     # DTAP Vaccine
-    dtap = schedule.vaccine_set.create(name="dtap",description="Diptheria, Tetanus, Pertusis")
+    dtap = schedule.vaccine_set.create(name="dtap", description="Diptheria, Tetanus, Pertusis")
     dtap.save()
     create_doses(dtap, 6)
 

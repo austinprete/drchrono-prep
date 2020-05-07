@@ -11,7 +11,7 @@
                     href="{% url 'schedule:chart' family.id member.id %}"> View {{ member.first_name }}'s immunization
                 chart</a></p>
         {% endfor %}
-        {% else %}
+    {% else %}
         <p>No family members to display yet, get started by adding a family member using the form below!</p>
     {% endif %}
     <h3>Add a family member:</h3>

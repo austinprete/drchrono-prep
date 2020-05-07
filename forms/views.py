@@ -14,7 +14,7 @@ from forms.models import Form
 def index(request):
     user = request.user
     forms = user.form_set.all()
-    return render(request, 'forms/index.html', {'request': request, 'forms': forms,})
+    return render(request, 'forms/index.html', {'request': request, 'forms': forms, })
 
 
 def new_user(request):
@@ -89,6 +89,7 @@ def share_form(request, form_id):
     user = request.user
     link = "http://" + request.get_host() + reverse('forms:view_form', args=(form_id,))
     connection = mail.get_connection()
-    send_mail('Form Designer: Shared form from ' + user.username, request.POST['message'] + '\n\n' + link, user.email, [request.POST['to_email']], connection=connection)
+    send_mail('Form Designer: Shared form from ' + user.username, request.POST['message'] + '\n\n' + link, user.email,
+              [request.POST['to_email']], connection=connection)
     connection.close()
     return HttpResponseRedirect(reverse('forms:form', args=(form_id,)))

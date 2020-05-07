@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
+
 # Create your views here.
 def index(request):
     return render(request, 'main/index.html', None)
@@ -37,6 +38,6 @@ def logout_view(request):
 
 
 @login_required
-def user(request):
+def user_info(request):
     user = request.user
     return render(request, 'main/user.html', {'request': request, 'user': user, })

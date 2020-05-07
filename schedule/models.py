@@ -16,7 +16,7 @@ class Patient(models.Model):
     first_name = models.CharField(max_length=20)
 
     def __str__(self):
-        return ("%s, %s" % (self.last_name, self.first_name))
+        return f"{self.last_name}, {self.first_name}"
 
 
 class Schedule(models.Model):
@@ -41,6 +41,5 @@ class Dose(models.Model):
     given = models.BooleanField(default=False)
     date = models.DateField(blank=True, null=True)
 
-
     def __str__(self):
-        return self.vaccine.schedule.patient.first_name + " " + self.vaccine.schedule.patient.last_name + " - " + self.name
+        return f'{self.vaccine.schedule.patient.first_name} {self.vaccine.schedule.patient.last_name} - {self.name}'
